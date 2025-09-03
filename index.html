@@ -9270,65 +9270,44 @@
 
 
 
+
 <!-- Popup chi tiết game -->
-<div id="gamePopup"
-     class="popup"
-     role="dialog"
-     aria-modal="true"
-     aria-hidden="true"
-     aria-labelledby="popupTitle"
-     aria-describedby="popupDesc">
+<div id="gamePopup" class="popup" aria-hidden="true" role="dialog" aria-labelledby="popupTitle">
+  <div class="popup-content">
+    
+    <!-- Nút đóng -->
+    <button class="close" onclick="closePopup()" aria-label="Đóng">&times;</button>
 
-  <div class="popup-content game-popup" role="document">
-
-    <!-- Header (cố định) -->
-    <header class="popup-header">
-      <h2 id="popupTitle">Tiêu đề game</h2>
-      <button class="close" onclick="closePopup()" aria-label="Đóng">&times;</button>
-    </header>
-
-    <!-- Body (phần này sẽ cuộn) -->
-    <div class="popup-body">
-
-      <!-- Video trailer (ẩn sẵn, JS bật/tắt bằng hidden=true/false) -->
-      <div id="popupVideoContainer" class="video" hidden>
-        <iframe id="popupVideo"
-                width="100%" height="250" frameborder="0"
-                title="Trailer game"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
-
-      <!-- Ảnh game -->
-      <img id="popupImg" src="" alt="Ảnh game" />
-
-      <!-- Thông tin game -->
-      <p id="popupGenre" class="genre">Thể loại</p>
-
-      <!-- Giá -->
-      <p class="popup-price">
-        <del id="popupOldPrice"></del>
-        <strong id="popupNewPrice"></strong>
-      </p>
-
-      <!-- Mô tả + nút xem thêm (có thể để JS chèn nút, hoặc để sẵn như dưới) -->
-      <div class="desc">
-        <p id="popupDesc"></p>
-        <!-- Nếu bạn muốn để sẵn nút:
-        <button id="descToggle" class="desc-toggle" type="button"
-                aria-controls="popupDesc" aria-expanded="false">Xem thêm</button>
-        -->
-      </div>
+    <!-- Video trailer -->
+    <div id="popupVideoContainer" style="display:none; margin-bottom:15px;">
+      <iframe id="popupVideo" width="100%" height="250" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </div>
 
-    <!-- Footer (cố định) -->
-    <footer class="popup-footer">
-      <button onclick="openBuyPopup()" class="buy-btn">🛒 Mua Game</button>
-    </footer>
+    <!-- Ảnh game -->
+    <img id="popupImg" src="" alt="Ảnh Game">
 
+    <!-- Thông tin game -->
+    <h2 id="popupTitle">Tiêu đề game</h2>
+    <p id="popupGenre">Thể loại</p>
+
+    <!-- Giá -->
+    <p class="popup-price">
+      <del id="popupOldPrice"></del>
+      <strong id="popupNewPrice"></strong>
+    </p>
+
+    <!-- Mô tả game (có thu gọn/mở rộng) -->
+    <p id="popupDesc"></p>
+    <!-- Nút Xem thêm sẽ tự động được JS thêm sau khi mở popup -->
+
+    <!-- Nút mua game -->
+    <button onclick="openBuyPopup()" class="buy-btn">
+      🛒 Mua Game
+    </button>
   </div>
 </div>
-
 
 
 
