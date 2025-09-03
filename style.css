@@ -1196,6 +1196,110 @@ body::-webkit-scrollbar-thumb:hover {
   to {opacity: 1; transform: scale(1);}
 }
 
+/* ===== MOBILE TUNING (≤520px) ===== */
+@media (max-width: 520px){
+
+  /* Card gọn hơn, tràn sát lề nhưng chừa safe-area */
+  .popup-content.buy-popup{
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 12px;
+    /* padding ảo để tránh sát mép màn hình có notch */
+    margin-left: env(safe-area-inset-left, 0);
+    margin-right: env(safe-area-inset-right, 0);
+    /* giảm shadow để bớt nặng mắt trên mobile */
+    box-shadow:
+      0 14px 36px rgba(0,0,0,.45),
+      0 0 0 1px rgba(255,255,255,.02) inset;
+  }
+
+  /* Header: chữ to vừa, padding dày tay */
+  .popup-content.buy-popup h2{
+    padding: 14px 16px;
+    font-size: 18px;
+    letter-spacing: .15px;
+    gap: 8px;
+  }
+
+  /* Note: chữ rõ, ít đậm màu hơn */
+  .buy-popup .note{
+    padding: 12px 16px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  /* QR: đặt max theo chiều ngang, giữ tỷ lệ, khoảng cách hợp lý */
+  .buy-popup .qr-box{
+    padding: 18px 16px 14px;
+  }
+  .buy-popup .qr-box img{
+    width: 100%;
+    max-width: 340px;   /* đủ lớn trên máy 6–7" */
+    border-radius: 12px;
+  }
+
+  /* Hàng liên hệ: xếp dọc, full-width, khoảng cách dễ chạm */
+  .buy-popup .contact-box{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+  .buy-popup .contact-box p{
+    font-size: 13.5px;
+    line-height: 1.45;
+  }
+
+  /* CTA: full-width, cao tay, font đậm */
+  .buy-popup .fanpage-btn{
+    width: 100%;
+    min-width: 0;
+    padding: 12px 16px;
+    height: 44px;                 /* tối thiểu 44px theo chuẩn touch target */
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  /* Hotline chip: lớn hơn chút, dễ nhìn */
+  .buy-popup .hotline{
+    padding: 12px 16px 16px;
+  }
+  .buy-popup .hotline strong{
+    padding: 9px 14px;
+    font-size: 14.5px;
+  }
+
+  /* Nút đóng: to + dễ bấm, không che header */
+  .popup-content.buy-popup .close{
+    top: 10px; right: 10px;
+    width: 40px; height: 40px; line-height: 40px;
+    font-size: 18px;
+    border-radius: 12px;
+    /* tăng hit area cho ngón tay */
+    touch-action: manipulation;
+  }
+
+  /* Giảm chuyển động nếu người dùng bật "giảm chuyển động" */
+  @media (prefers-reduced-motion: reduce){
+    .popup-content.buy-popup,
+    .buy-popup .fanpage-btn{
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
+
+/* Tuỳ chọn: tối ưu cho màn hình rất nhỏ (≤360px) */
+@media (max-width: 360px){
+  .popup-content.buy-popup h2{ font-size: 17px; }
+  .buy-popup .note,
+  .buy-popup .contact-box p{ font-size: 13px; }
+  .buy-popup .qr-box img{ max-width: 300px; }
+}
+
+
+
 
 .popup {
   display: none;
