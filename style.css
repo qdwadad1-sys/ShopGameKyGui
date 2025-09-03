@@ -2,6 +2,45 @@
 @import url('http://fonts.cdnfonts.com/css/games?styles=17672');
 
 
+/* --- FIX: bỏ khóa cứng khi dùng grid danh sách game --- */
+.trending-content .box,
+.new-content .box{
+  /* reset các ràng buộc cũ */
+  flex: initial !important;
+  max-width: initial !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Giữ thẻ gọn đẹp theo tỉ lệ khi về mobile */
+.trending-content .box,
+.new-content .box{
+  aspect-ratio: 3 / 4;           /* thẻ cao hơn ngang, giống ảnh 2 */
+  overflow: hidden;
+}
+.trending-content .box img,
+.new-content .box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Luôn 2 cột trên điện thoại (kể cả màn rất nhỏ) */
+@media (max-width: 768px){
+  .trending-content,
+  .new-content{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px;
+  }
+}
+
+/* Nếu cực nhỏ <360px vẫn muốn 2 cột: giữ nguyên; 
+   nếu muốn 1 cột ở rất nhỏ thì bật block dưới:*/
+@media (max-width: 360px){
+  .trending-content,
+  .new-content{ grid-template-columns: 1fr !important; }
+}
 
 
 
