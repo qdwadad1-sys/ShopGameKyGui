@@ -1805,22 +1805,45 @@ header {
   z-index: 0;
 }
 
-.home-text{
-  position: relative;
-  z-index: 1;     /* ↑ cho chữ nằm trên ảnh */
-  /* giữ các style chữ cũ của bạn */
-}
 .home-text {
-    padding-right: 4rem;
-    text-align: right;
+  position: relative;
+  z-index: 1;       /* chữ nằm trên ảnh */
+  padding-right: 4rem;
+  text-align: right;
 }
 
 .home-text h1 {
-    font-size: 2.4rem;
-    text-transform: uppercase;
-    color: var(--dark-color);
-    margin-bottom: 2rem;
-    font-family: 'Games', sans-serif;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: var(--dark-color);
+  margin-bottom: 2rem;
+  font-family: 'Games', sans-serif;
+}
+
+/* Responsive cho tablet */
+@media (max-width: 992px) {
+  .home-text {
+    padding-right: 2rem;
+    text-align: center; /* chữ ra giữa */
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 576px) {
+  .home-text {
+    padding-right: 0; 
+    padding-left: 0;
+    text-align: center; /* căn giữa chữ */
+  }
+
+  .home-text h1 {
+    font-size: 1.6rem;   /* nhỏ lại cho dễ đọc */
+    line-height: 1.4;    /* giãn dòng hợp lý */
+  }
 }
 
 .btn {
