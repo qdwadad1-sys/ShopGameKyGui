@@ -342,13 +342,14 @@ header .search-container input{
 
 /* Nút mua game */
 .popup-content button[onclick^="openBuyPopup"] {
-  width: auto;                     /* chỉ to vừa text */
+  width: auto;
   min-width: 140px;
   font-size: 15px;
   padding: 10px 14px !important;
   border-radius: 10px !important;
-  background: linear-gradient(90deg,#0ea5e9,#2563eb);
-  box-shadow: 0 6px 14px rgba(14,165,233,.25);
+  background: linear-gradient(90deg, #22c55e, #15803d); /* xanh lá sáng → xanh lá đậm */
+  box-shadow: 0 6px 14px rgba(34, 197, 94, .3);
+  color: #fff;
 }
 .popup-content button[onclick^="openBuyPopup"]:hover {
   filter: brightness(1.1);
@@ -1023,6 +1024,73 @@ body::-webkit-scrollbar-thumb:hover {
   transform: scale(1.1); /* phóng to ảnh bên trong */
 }
 
+/* ==== BOX: Hover mạnh hơn (paste cuối file) ==== */
+.box{
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transform: translateZ(0);
+  /* mượt hơn & chắc tay */
+  transition:
+    transform .28s cubic-bezier(.22,.61,.36,1),
+    box-shadow .28s ease,
+    filter .28s ease;
+  will-change: transform;
+}
+
+/* ánh sáng/shine khi hover */
+.box::after{
+  content:"";
+  position:absolute; inset:-50%;
+  background:
+    radial-gradient(120% 60% at 50% -20%, rgba(255,255,255,.18), transparent 60%),
+    linear-gradient(120deg, rgba(255,255,255,.08), rgba(255,255,255,0) 30%);
+  opacity: 0;
+  transform: translateY(10px) rotate(.001deg);
+  transition: opacity .25s ease, transform .35s ease;
+  pointer-events: none;
+}
+
+/* HOVER MẠNH: phóng to, nhấc cao, bóng sâu + tăng sáng nhẹ */
+.box:hover{
+  transform: translateY(-12px) scale(1.08) rotateX(.5deg);
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,255,255,.06) inset,
+    0 0 36px color-mix(in srgb, var(--main-color) 35%, transparent);
+  filter: brightness(1.06) contrast(1.02);
+}
+.box:hover::after{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ẢNH phóng mạnh hơn khi hover */
+.box img{
+  transition: transform .35s cubic-bezier(.22,.61,.36,1), filter .2s ease;
+}
+.box:hover img{
+  transform: scale(1.16);
+  filter: saturate(1.05);
+}
+
+/* Tuỳ chọn: viền neon tím (gắn class box--neon vào thẻ để dùng) */
+.box--neon:hover{
+  box-shadow:
+    0 22px 52px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,255,255,.08) inset,
+    0 0 22px rgba(136,85,255,.45),
+    0 0 44px rgba(136,85,255,.35);
+  outline: 1px solid rgba(136,85,255,.45);
+  outline-offset: -1px;
+}
+
+/* Tôn trọng người dùng giảm chuyển động */
+@media (prefers-reduced-motion: reduce){
+  .box, .box::after, .box img{ transition: none; }
+}
+
+
 
 .popup {
   display: none;
@@ -1365,11 +1433,15 @@ body.modal-open{ overflow: hidden; }
   font-size: 12px;
 }
 
-.new-price {
-  color: gray;
+.new-price{
+  color: #60a5fa;
   font-weight: bold;
   font-size: 13px;
 }
+
+
+
+
 
 .game-rating {
   display: flex;
