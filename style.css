@@ -5,6 +5,53 @@
 
 
 
+/* Nút clear (❌) trong ô tìm kiếm */
+.clear-btn {
+  position: absolute;
+  right: 12px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  display: none;          /* mặc định ẩn */
+  user-select: none;
+}
+.clear-btn:hover { color: #fff; }
+
+
+
+
+
+/* Khi đang lọc: bật layout ổn định, card luôn giữ cỡ dù còn 1 kết quả */
+body.filter-mode .trending-content,
+body.filter-mode .new-content{
+  display: grid;
+  gap: 20px;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  justify-content: start;
+}
+
+/* Card trong chế độ lọc: giữ tỉ lệ 3:4, không kéo giãn */
+body.filter-mode .trending-content > .box,
+body.filter-mode .new-content > .box{
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+body.filter-mode .trending-content > .box img,
+body.filter-mode .new-content > .box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ẩn item không khớp (chỉ trong 2 grid game) */
+.trending-content > .box.filtered-out,
+.new-content > .box.filtered-out{
+  display: none !important;
+}
 
 
 

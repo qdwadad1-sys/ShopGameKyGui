@@ -34,7 +34,7 @@
         </a>
         <div class="nav-icons">
           <i class="bx bx-bell bx-tada" id="bell-icon"><span></span></i>
-          <a onclick="openBuyPopup()">
+          <a data-popup="popup-baohanh">
   <i class="bx bxs-info-circle bx-tada" id="contact-icon"></i>
 </a>
 
@@ -48,6 +48,7 @@
   <div class="search-container">
     <span class="search-icon">🔍</span>
     <input type="text" id="searchInput" placeholder="Tìm kiếm game và thể loại...">
+    <span id="clearSearch" class="clear-btn">&times;</span>
   </div>
 
   <!-- Menu -->
@@ -802,6 +803,34 @@
       </div>
       <div class="game-rating">
         ⭐ 9.5
+      </div>
+    </div>
+  </div>
+</div>
+<!-- God of War: Ragnarok -->
+<div class="box" onclick="openPopup(
+  'God of War: Ragnarok',
+  'Hành động phiêu lưu, chặt chém',
+  '1.790.000 ₫',
+  '69.000 ₫',
+  'img/gow-ragnarok.gif',
+  'God of War: Ragnarok tiếp nối hành trình của Kratos và con trai Atreus trong thần thoại Bắc Âu, nơi họ đối mặt với sự khởi đầu của tận thế Ragnarok. Game nổi bật với combat đỉnh cao kết hợp rìu Leviathan, Blades of Chaos và nhiều kỹ năng mới, kèm theo cốt truyện giàu cảm xúc, đồ họa tuyệt đẹp và các màn đối đầu hoành tráng với thần thánh, quái vật Bắc Âu.',
+  'https://www.youtube.com/watch?v=EE-4GvjKcfs'
+)">
+  <img src="img/gow-ragnarok.jpg" alt="God of War Ragnarok Poster" />
+  <div class="box-text">
+    <h2>God of War: Ragnarok</h2>
+    <h3>Hành động phiêu lưu, chặt chém</h3>
+    <div class="rating-download">
+      <div class="rating">
+        <i class="bx bx-dollar"></i>
+        <p>
+          <span class="old-price">1.790.000 ₫</span>
+          <span class="new-price">69.000 ₫</span>
+        </p>
+      </div>
+      <div class="game-rating">
+        ⭐ 9.6
       </div>
     </div>
   </div>
@@ -2074,6 +2103,37 @@
     </div>
   </div>
 </div>
+
+
+<!-- Mortal Kombat 11 -->
+<div class="box" onclick="openPopup(
+  'Mortal Kombat 11',
+  'Đối kháng, hành động bạo lực',
+  '1.200.000 ₫',
+  '49.000 ₫',
+  'img/mk11.gif',
+  'Mortal Kombat 11 là phần mới nhất của series đối kháng huyền thoại, mang đến hệ thống Fatal Blow và Fatality tàn bạo, roster chiến binh đa dạng từ Scorpion, Sub-Zero, Raiden cho đến các nhân vật khách mời đình đám. Game có cốt truyện điện ảnh hoành tráng, đồ họa cực kỳ chi tiết và cơ chế tùy biến nhân vật sâu giúp mỗi trận đấu trở nên gay cấn và độc nhất.',
+  'https://www.youtube.com/watch?v=NYH2sLid0Zc'
+)">
+  <img src="img/mk11.jpg" alt="Mortal Kombat 11 Poster" />
+  <div class="box-text">
+    <h2>Mortal Kombat 11</h2>
+    <h3>Đối kháng, hành động bạo lực</h3>
+    <div class="rating-download">
+      <div class="rating">
+        <i class="bx bx-dollar"></i>
+        <p>
+          <span class="old-price">1.200.000 ₫</span>
+          <span class="new-price">49.000 ₫</span>
+        </p>
+      </div>
+      <div class="game-rating">
+        ⭐ 8.8
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- New 56: BioShock Remastered -->
 <div class="box" onclick="openPopup(
@@ -8004,29 +8064,7 @@
   </div>
 </div>
 
-<!-- New 312: Vikings: Wolves of Midgard -->
-<div class="box" onclick="openPopup(
-  'Vikings: Wolves of Midgard',
-  'Action RPG, hành động, nhập vai',
-  '690.000',
-  '39.000 ₫',
-  'img/new312.png',
-  'Vikings: Wolves of Midgard là game nhập vai hành động lấy bối cảnh thần thoại Bắc Âu. Người chơi vào vai chiến binh Viking chiến đấu chống lại quái vật, thần thánh và những thế lực bóng tối trong thời kỳ Ragnarok. Gameplay chặt chém đã tay, kết hợp hệ thống loot và nâng cấp nhân vật phong phú.',
-  'https://www.youtube.com/embed/-9jf-0DeWD0',
-  '7.4'
-)">
-  <img src="img/new312.png" alt="Vikings Wolves of Midgard" />
-  <div class="box-text">
-    <h2>Vikings: Wolves of Midgard</h2>
-    <h3>Action RPG, hành động, nhập vai</h3>
-    <div class="rating-download">
-      <div class="rating"><i class="bx bx-dollar"></i>
-        <p><span class="old-price">690.000</span> <span class="new-price">39.000 ₫</span></p>
-      </div>
-      <div class="game-rating">⭐ 7.4</div>
-    </div>
-  </div>
-</div>
+
 
 <!-- New 313: Layers of Fear -->
 <div class="box" onclick="openPopup(
@@ -9273,6 +9311,64 @@
   </div>
 </div>
 
+<!-- Shadow Tactics: Blades of the Shogun -->
+<div class="box" onclick="openPopup(
+  'Shadow Tactics: Blades of the Shogun',
+  'Chiến thuật, lén lút thời Edo Nhật Bản',
+  '450.000 ₫',
+  '40.000 ₫',
+  'img/shadow-tactics.gif',
+  'Shadow Tactics: Blades of the Shogun là game chiến thuật thời gian thực kết hợp yếu tố lén lút, lấy bối cảnh Nhật Bản thời Edo. Bạn điều khiển một nhóm 5 sát thủ tinh nhuệ với kỹ năng độc đáo như ám sát, bẫy, ngụy trang và điều khiển bóng tối để vượt qua những pháo đài kiên cố. Game đòi hỏi tư duy chiến lược, tính toán từng bước đi chính xác và mang lại cảm giác hồi hộp ở mỗi nhiệm vụ.',
+  'https://youtu.be/Wlp8m8_5xsg'
+)">
+  <img src="img/shadow-tactics.jpg" alt="Shadow Tactics Blades of the Shogun Poster" />
+  <div class="box-text">
+    <h2>Shadow Tactics: Blades of the Shogun</h2>
+    <h3>Chiến thuật, lén lút thời Edo Nhật Bản</h3>
+    <div class="rating-download">
+      <div class="rating">
+        <i class="bx bx-dollar"></i>
+        <p>
+          <span class="old-price">450.000 ₫</span>
+          <span class="new-price">40.000 ₫</span>
+        </p>
+      </div>
+      <div class="game-rating">
+        ⭐ 8.9
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BeamNG.drive -->
+<div class="box" onclick="openPopup(
+  'BeamNG.drive',
+  'Mô phỏng lái xe thực tế, thế giới mở',
+  '500.000 ₫',
+  '45.000 ₫',
+  'img/beamng.gif',
+  'BeamNG.drive là game mô phỏng lái xe vật lý chân thực nổi tiếng, nơi mọi vụ va chạm, biến dạng xe và môi trường đều được tái hiện cực kỳ chi tiết. Người chơi có thể thử nghiệm vô số loại xe, địa hình và tình huống từ đua tốc độ, vượt địa hình, drift cho đến tai nạn va chạm mô phỏng. Game nổi bật bởi cơ chế vật lý độc nhất, thế giới mở tự do và khả năng tùy chỉnh xe gần như vô hạn.',
+  'https://youtu.be/4ms-LHkN6YQ'
+)">
+  <img src="img/beamng.jpg" alt="BeamNG.drive Poster" />
+  <div class="box-text">
+    <h2>BeamNG.drive</h2>
+    <h3>Mô phỏng lái xe thực tế, thế giới mở</h3>
+    <div class="rating-download">
+      <div class="rating">
+        <i class="bx bx-dollar"></i>
+        <p>
+          <span class="old-price">500.000 ₫</span>
+          <span class="new-price">45.000 ₫</span>
+        </p>
+      </div>
+      <div class="game-rating">
+        ⭐ 9.2
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
         
@@ -9430,6 +9526,7 @@
   const searchIcon  = document.querySelector(".search-container .search-icon");
   const SCROLL_OFFSET = 84; // chiều cao header cố định (đổi nếu header cao khác)
 
+
   // Tìm phần "kho game" tốt nhất để cuộn tới
   function resolveScrollTarget() {
     return (
@@ -9448,14 +9545,31 @@
   }
 
   // Lọc danh sách game
-  function filterBoxes(query) {
-    const filter = (query || "").toLowerCase().trim();
-    document.querySelectorAll(".box").forEach((box) => {
-      const title    = (box.querySelector("h2")?.textContent || "").toLowerCase();
-      const category = (box.querySelector("h3")?.textContent || "").toLowerCase();
-      box.style.display = (title.includes(filter) || category.includes(filter)) ? "" : "none";
-    });
-  }
+  function normalizeVN(s){
+  return (s||"").toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/đ/g,"d");
+}
+
+function filterBoxes(query) {
+  const q = normalizeVN((query || "").trim());
+
+  const boxes = document.querySelectorAll(
+    ".trending-content > .box, .new-content > .box"
+  );
+
+  // Bật/tắt "filter mode" cho toàn trang
+  if (q) document.body.classList.add("filter-mode");
+  else   document.body.classList.remove("filter-mode");
+
+  boxes.forEach(box => {
+    const title = normalizeVN(box.querySelector("h2")?.textContent || "");
+    const cat   = normalizeVN(box.querySelector("h3")?.textContent || "");
+    const hit = !q || title.includes(q) || cat.includes(q);
+    box.classList.toggle("filtered-out", !hit);
+  });
+}
+
 
   // Debounce để cuộn sau khi người dùng dừng gõ 1 chút
   let typingTimer;
@@ -9494,6 +9608,32 @@
       smoothScrollTo(resolveScrollTarget());
     });
   }
+
+
+
+const clearBtn = document.getElementById("clearSearch");
+
+function toggleClearBtn() {
+  if (searchInput && clearBtn) {
+    clearBtn.style.display = searchInput.value.trim() ? "block" : "none";
+  }
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    toggleClearBtn();
+  });
+}
+
+if (clearBtn) {
+  clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    filterBoxes("");                 // reset danh sách game
+    document.body.classList.remove("filter-mode"); // thoát filter-mode
+    toggleClearBtn();
+  });
+}
+
 
   // Click danh mục trong menu → điền vào ô tìm kiếm, lọc, cuộn & ĐÓNG menu
   if (menuNavbar) {
@@ -9933,7 +10073,7 @@
     <div class="popup-icon"><i class="fas fa-shield-alt"></i></div>
     <h2 id="baohanh-title">Quy trình bảo hành</h2>
     <ul class="popup-list">
-      <li><i class="fas fa-phone-alt" style="color:#4dabf7;"></i> Liên hệ shop khi có vấn đề</li>
+      <li><i class="fas fa-phone-alt" style="color:#4dabf7;"></i> Liên hệ shop khi có vấn đề </li>
       <li><i class="fas fa-sync-alt" style="color:#ff6b6b;"></i>Hoàn tiền trong 24h nếu có lỗi ( trừ trường hợp lỗi do denuvo)</li>
       <li><i class="fas fa-sync-alt" style="color:#ff6b6b;"></i> Shop cấp lại tài khoản/game</li>
       <li><i class="fas fa-award" style="color:#fcdc6f;"></i> Bảo hành trọn đời sản phẩm</li>
